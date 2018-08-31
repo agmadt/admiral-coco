@@ -1,0 +1,1 @@
+Minimal setup for building API with NodeJs

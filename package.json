@@ -1,0 +1,42 @@
+{
+  "name": "initial-node-setup-agmadt",
+  "version": "1.0.0",
+  "description": "Minimal setup for building API with nodejs for myself",
+  "main": "index.js",
+  "scripts": {
+    "db:migrate": "node ./scripts/migrate",
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
+    "test": "npm run db:migrate SET \"NODE_ENV=test\" && mocha tests/routes.userSpec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agmadt/admiral-coco.git"
+  },
+  "keywords": [
+    "nodejs",
+    "test",
+    "express",
+    "javascript"
+  ],
+  "author": "Agam Adhityo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agmadt/admiral-coco.git/issues"
+  },
+  "homepage": "https://github.com/agmadt/admiral-coco.git#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "child-process-promise": "^2.2.1",
+    "dotenv": "^6.0.0",
+    "expect": "^23.5.0",
+    "express": "^4.16.3",
+    "express-validator": "^5.3.0",
+    "mocha": "^5.2.0",
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.38.0",
+    "sequelize-cli": "^4.1.1",
+    "sqlite": "^3.0.0",
+    "supertest": "^3.1.0"
+  }
+}
