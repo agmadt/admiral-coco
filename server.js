@@ -1,11 +1,13 @@
 require('dotenv').load();
 
 const express = require('express');
-const path = require('path');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
+const helmet = require('helmet');
 
 const app = express();
+
+app.use(helmet());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
