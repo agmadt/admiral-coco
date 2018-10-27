@@ -18,6 +18,19 @@ describe('Endpoint test', function () {
       });
   });
 
+  it('POST /test should be return 200', (done) => {
+    request(app)
+      .post('/test')
+      .send({
+        name: 'nama'
+      })
+      .expect(200)
+      .end((error) => {
+        if (error) throw error;
+        done();
+      });
+  });
+
   it('/something should be return 404', (done) => {
     request(app)
       .get('/something')

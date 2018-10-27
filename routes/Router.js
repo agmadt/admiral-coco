@@ -1,5 +1,4 @@
 const express = require('express');
-const expressValidator = require('express-validator');
 const router = express.Router();
 
 class Router {
@@ -35,11 +34,13 @@ class Router {
 
     r(route, middlewares, async (req, res) => {
       try {
-        // inject express-validator into req
-        expressValidator()(req, {}, () => {});
         const data = await action(req, res);
 
-        return data;
+        if (data.code) {
+          return res.status(data.code).json(data);
+        }
+
+        return res.json(data);
       } catch (err) {
 
         console.log(err);

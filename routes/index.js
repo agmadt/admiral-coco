@@ -8,5 +8,6 @@ const testController = require('../app/controller/TestController');
 
 // test route
 router.get('/test', testController.index);
+router.post('/test', testController.post);
 
 module.exports = router.create();
