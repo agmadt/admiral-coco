@@ -7,7 +7,7 @@
     "db:migrate": "node ./scripts/migrate",
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "test": "npm run db:migrate SET \"NODE_ENV=test\" && mocha tests/routes.userSpec.js"
+    "test": "mocha tests/routes.userSpec.js"
   },
   "repository": {
     "type": "git",

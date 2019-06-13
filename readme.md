@@ -1,4 +1,4 @@
-Minimal setup for building API with NodeJs
+Minimal setup for building API with express.js
 
 HOW TO:
 1. clone this
