@@ -35,19 +35,9 @@ class Router {
     r(route, middlewares, async (req, res) => {
       try {
         const data = await action(req, res);
-
-        if (data.code) {
-          return res.status(data.code).json(data);
-        }
-
-        return res.json(data);
+        return data;
       } catch (err) {
-
-        console.log(err);
-
-        return res.status(err.code).json({
-          message: err
-        });
+        return err;
       }
     });
   }
