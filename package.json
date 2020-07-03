@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "db:migrate": "node ./scripts/migrate",
-    "start": "node ./server",
-    "dev": "nodemon ./server",
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
     "test": "mocha tests/routes.userSpec.js"
   },
   "repository": {
