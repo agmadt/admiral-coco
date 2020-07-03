@@ -32,9 +32,9 @@ class Router {
       break;
     }
 
-    r(route, middlewares, async (req, res) => {
+    r(route, middlewares, (req, res) => {
       try {
-        const data = await action(req, res);
+        const data = action(req, res);
         return data;
       } catch (err) {
         return err;
