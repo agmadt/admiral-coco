@@ -1,4 +1,4 @@
-const indicative = require('indicative');
+const { validations, validateAll } = require('indicative/validator')
 
 const TestController = {
 
@@ -12,16 +12,18 @@ const TestController = {
   post: async (req, res) => {
 
     const rules = {
-      name: 'required',
+      name: [
+        validations.required()
+      ],
     };
 
-    indicative.validateAll(req.body, rules)
-    .then((data) => {
-      return res.json(req.body)
-    })
-    .catch( (err) => {
-      return res.status(422).json(err)
-    });
+    validateAll(req.body, rules)
+      .then((data) => {
+        return res.json(req.body)
+      })
+      .catch( (err) => {
+        return res.status(422).json(err)
+      });
   }
 }
 
